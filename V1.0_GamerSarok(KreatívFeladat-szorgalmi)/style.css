@@ -1,0 +1,95 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to right, #000000, #f2e9ff);
+}
+
+.img-box:first-child{
+    background: url(img/GamerCorner01.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.img-box:nth-child(2){
+    background: url(img/GamerCorner02.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(3){
+    background: url(img/GamerCorner03.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(4){
+    background: url(img/GamerCorner04.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(5){
+    background: url(img/GamerCorner05.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(6){
+    background: url(img/GamerCorner06.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(7){
+    background: url(img/GamerCorner07.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(8){
+    background: url(img/GamerCorner08.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(9){
+    background: url(img/GamerCorner09.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(10){
+    background: url(img/GamerCorner10.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(11){
+    background: url(img/GamerCorner11.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(12){
+    background: url(img/GamerCorner12.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+}
+  
+  .img-box {
+    width: 100%;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: height 0.3s;
+  }
+  
+.img-box:hover {
+    height: 300px;
+}
+  
