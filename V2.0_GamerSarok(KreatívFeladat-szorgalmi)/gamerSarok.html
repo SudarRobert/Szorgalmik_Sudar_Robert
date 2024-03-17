@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sudár Róbert - T13">
+    <link rel="stylesheet" href="./style.css">
+    <title>GamerSarok v2.0</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <span style="--i:1"><img src="img/GamerCorner01.jpg" alt="GamerSarok" title="GamerSarok"></span>
+            <span style="--i:2"><img src="img/GamerCorner02.jpg" alt="GamerSarok" title="GamerSarok"></span>
+            <span style="--i:3"><img src="img/GamerCorner03.jpg" alt="GamerSarok" title="GamerSarok"></span>
+            <span style="--i:4"><img src="img/GamerCorner04.jpg" alt="GamerSarok" title="GamerSarok"></span>
+            <span style="--i:5"><img src="img/GamerCorner05.jpg" alt="GamerSarok" title="GamerSarok"></span>
+            <span style="--i:6"><img src="img/GamerCorner06.jpg" alt="GamerSarok" title="GamerSarok"></span>
+            <span style="--i:7"><img src="img/GamerCorner07.jpg" alt="GamerSarok" title="GamerSarok"></span>
+            <span style="--i:8"><img src="img/GamerCorner08.jpg" alt="GamerSarok" title="GamerSarok"></span>
+            <span style="--i:9"><img src="img/GamerCorner09.jpg" alt="GamerSarok" title="GamerSarok"></span>
+            <span style="--i:10"><img src="img/GamerCorner10.jpg" alt="GamerSarok" title="GamerSarok"></span>
+            <span style="--i:11"><img src="img/GamerCorner11.jpg" alt="GamerSarok" title="GamerSarok"></span>
+            <span style="--i:12"><img src="img/GamerCorner12.jpg" alt="GamerSarok" title="GamerSarok"></span>
+        </div>
+        <div class="btns">
+            <div class="btn prev"></div>
+            <div class="btn next"></div>
+        </div>
+    </div>
+
+    <script>
+        let prev = document.querySelector('.prev');
+        let next = document.querySelector('.next');
+        let box = document.querySelector('.box');
+        let degrees = 0;
+
+        prev.addEventListener('click', function () {
+            degrees += 30;
+            box.style = `transform:perspective(1000px) rotateY(${degrees}deg);`;
+
+        })
+
+        next.addEventListener('click', function () {
+            degrees -= 30;
+            box.style = `transform:perspective(1000px) rotateY(${degrees}deg);`;
+
+        })
+    </script>
+</body>
+
+</html>
