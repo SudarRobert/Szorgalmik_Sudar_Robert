@@ -1,0 +1,44 @@
+<!-- Halmazállapot szorgalmi / T13 / Sudár Róbert -->
+
+<div class="container">
+    <h1 class="text-center mb-4">Halmazállapot feladat</h1>
+
+    <!-- Hőmérséklet (input) -->
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-4">
+            <label for="vizsgaltErtek">Add meg a vizsgálandó víz hőmérsékletét (C°)!</label>
+            <input type="number" class="form-control" id="vizsgaltErtek" [(ngModel)]="vizsgaltErtek">
+            <button class="btn btn-primary w-100 mt-3" type="button" (click)="halmazAllapotVizsgalo()">Hőfok
+                vizsgálata</button>
+        </div>
+    </div>
+    <p class="text-center">{{ uzenet }}</p>
+
+    <!-- Halmazállapot (select) -->
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-4">
+            <label for="HalmazAllapot">Add meg a vizsgálandó halmazállapotot!</label>
+            <select class="form-control" id="HalmazAllapot" [(ngModel)]="vizsgaltAllapot">
+                <option value="szilárd">Szilárd</option>
+                <option value="folyékony">Folyékony</option>
+                <option value="légnemű">Légnemű</option>
+                <option value="változó">Változó</option>
+            </select>
+            <button class="btn btn-primary w-100 mt-3" type="button" (click)="homersekeltVizsgalo()">Halmazállapot
+                vizsgálata</button>
+        </div>
+    </div>
+    <p class="text-center">{{ uzenetHalmaz }}</p>
+
+    <!-- Celsiusból Fahrenheit (range)-->
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-4 text-center mt-5">
+            <h2>Celsius - Fahrenheit átváltó</h2>
+            <label for="celsiusInput">Add meg az átváltandó hőfokot!</label>
+            <input type="range" class="form-control-range w-100" id="celsiusInput" [(ngModel)]="celsius"
+                (input)="FahrenheitAtvalto()" min="-200" max="200" step="1">
+            <p>Celsius: {{ celsius }}°C</p>
+            <p>Fahrenheit: {{ fahrenheit }}°F</p>
+        </div>
+    </div>
+</div>
