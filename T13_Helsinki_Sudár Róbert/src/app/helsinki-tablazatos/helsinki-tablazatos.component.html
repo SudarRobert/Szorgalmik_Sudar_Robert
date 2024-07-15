@@ -1,0 +1,96 @@
+<div class="container">
+    <h1 class="text-center">Helsinki Olimpiai eredmények</h1>
+    <div style="background-color: rgb(118, 208, 95); padding: 10px; border-radius: 10px; margin:5px">
+        <div class="row">
+            <div class="col-9">
+                <h2>Olimpiai eredmények feltöltése</h2>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-danger" (click)="feltoltoMegjelenito()">Feltöltő felület</button>
+            </div>
+        </div>
+        <div *ngIf="megjelenito">
+            <div class="form-group">
+                <label for="helyezes">Elért helyezés:</label>
+                <input type="number" class="form-control" id="helyezes" min="1" max="6" [(ngModel)]="helyezes">
+            </div>
+            <div class="form-group">
+                <label for="csapatMeret">Csapat mérete:</label>
+                <input type="number" class="form-control" id="csapatMeret" min="1" max="20" [(ngModel)]="csapatMeret">
+            </div>
+            <div class="form-group">
+                <label for="sportag">Sportág neve:</label>
+                <input type="text" class="form-control" id="sportag" [(ngModel)]="sportag">
+            </div>
+            <div class="form-group">
+                <label for="versenySzam">Versenyszám neve:</label>
+                <input type="text" class="form-control" id="versenySzam" [(ngModel)]="versenySzam">
+            </div>
+            <button type="button" class="btn btn-danger w-100 my-2" (click)="ujEredmenyHozzaad()">Eredmény
+                mentése</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div style="background-color: rgb(118, 208, 95); padding: 10px; border-radius: 10px;">
+        <h2>Helsinki Olimpia (1952) magyar eredmények:</h2>
+        <div class="form-group"
+            style="background-color: rgb(191, 211, 186); padding: 10px; border-radius: 10px; margin: 5px">
+            <h3>Szűrési feltételek</h3>
+            <div class="row">
+                <div class="col-6">
+                    <label for="helyezesSzures">Helyezés: {{keresoHelyezes}}</label>
+                    <input type="range" class="form-range my-2" id="helyezesSzures" min="1" max="6"
+                        [(ngModel)]="keresoHelyezes">
+
+                </div>
+                <div class="col-6">
+                    <label for="csapatSzures">Csapat mérete: {{keresoMeret}}</label>
+                    <input type="range" class="form-range my-2" id="csapatSzures" min="1" max="20"
+                        [(ngModel)]="keresoMeret">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <input type="text" class="form-control my-2" placeholder="Sportág" id="sportagSzures"
+                        [(ngModel)]="keresoSportag">
+                </div>
+                <div class="col-4">
+                    <input type="text" class="form-control my-2" placeholder="Versenyszám" id="versenySzures"
+                        [(ngModel)]="keresoVerseny">
+                </div>
+
+                <div class="col-4">
+                    <button type="button" class="btn btn-secondary w-100 my-2"
+                        (click)="osszesSzuresiFeltetelTorlese()">Szűrés
+                        törlése</button>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-success table-striped table-sm">
+            <thead class="table-dark">
+                <tr>
+                    <th>Helyezés</th>
+                    <th>Csapat méret</th>
+                    <th>Sportág</th>
+                    <th>Versenyszám</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let objektumAdat of szurtElemek">
+                    <td>{{objektumAdat.helyezes}}</td>
+                    <td>{{objektumAdat.csapatMeret}}</td>
+                    <td>{{objektumAdat.sportag}}</td>
+                    <td>{{objektumAdat.versenySzam}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer>
+    <h3 class="text-center">Készítette: T13 - Sudár Robi</h3>
+</footer>
